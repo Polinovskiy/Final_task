@@ -247,6 +247,9 @@
       <method />
     </configuration>
   </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+  </component>
   <component name="libraryTable">
     <library name="Maven: com.google.code.findbugs:annotations:3.0.1u2">
       <CLASSES>

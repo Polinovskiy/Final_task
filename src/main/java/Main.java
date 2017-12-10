@@ -4,10 +4,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Приложение "Калькулятор",
+ * реализующее операцию деления.
+ *
+ * @author Дмитрий Полиновский
+ */
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("calculator.fxml"));
         primaryStage.setTitle("Calculator");
         primaryStage.setScene(new Scene(root));

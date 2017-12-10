@@ -1,39 +1,52 @@
 package Operations;
 
+/**
+ * Реализует операцию деления
+ */
 public class Divider {
-    private Double a;
-    private Double b;
+    private Double dividend;  //делимое
+    private Double divider;   //делитель
 
-    public String Divide(String aa, String bb){
-        a=parseTextField(aa);
-        b=parseTextField(bb);
-        if (a==null){
+    /**
+     * Операция деления
+     *
+     * @param dividendA делимое
+     * @param dividerB  делитель
+     * @return Результат деления или ошибку вида "Error: <Тип ошибки>"
+     */
+    public String Divide(String dividendA, String dividerB) {
+        dividend = parseTextField(dividendA);
+        divider = parseTextField(dividerB);
+        if (dividend == null) {
             return "Error: dividend is incorrect or null!";
         }
-        if (b==null){
+        if (divider == null) {
             return "Error: divider is incorrect or null!";
         }
-        if (b.equals(0.0)&& !a.equals(0.0)){
-                return "Error: Division by zero!";
+        if (divider.equals(0.0) && !dividend.equals(0.0)) {
+            return "Error: Division by zero!";
         }
-        if ((a/b)%1==0){
-            return Integer.valueOf((int)(a/b)).toString();
-        }
-
-        else {
-            return Double.toString(a / b);
+        if ((dividend / divider) % 1 == 0) {
+            return Integer.valueOf((int) (dividend / divider)).toString();
+        } else {
+            return Double.toString(dividend / divider);
         }
     }
 
-    private Double parseTextField(String val){
-        Double result=0.0;
+    /**
+     * Конвертор строки в число
+     *
+     * @param val строка
+     * @return число или null
+     */
+    private Double parseTextField(String val) {
+        Double result;
         try {
-            result=Double.parseDouble(val);
-            if (val.toLowerCase().contains("d")||val.toLowerCase().contains("f")||val.contains(" ")){
+            result = Double.parseDouble(val);
+            if (val.toLowerCase().contains("d") || val.toLowerCase().contains("f") || val.contains(" ")) {
                 return null;
             }
-        }
-        catch (NumberFormatException nfe){
+        } catch (NumberFormatException nfe) {
             return null;
         }
         return result;
